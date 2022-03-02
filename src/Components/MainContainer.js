@@ -45,7 +45,9 @@ function MainContainer(){
                                 Todo's
                             </thead>
                             <tbody>
-                                {todos.map((todo, index) => (
+                                {
+                                (todos !== null) ?
+                                todos.map((todo, index) => (
                                     <tr> 
                                         <td>{<Todo
                                                 key={index}
@@ -55,7 +57,10 @@ function MainContainer(){
                                                 removeTodo = {removeTodo}
                                             />}</td>
                                     </tr>
-                                ))}
+                                )) 
+                            : <div>
+                                Add a todo
+                            </div> }
                             </tbody>
                         </table>
                     </>
